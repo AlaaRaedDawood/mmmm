@@ -18,6 +18,7 @@ app.get('/', function (req, res) {
 
 
 
+<<<<<<< HEAD
 app.get('/sp', function (req, res, next) {
   pg.connect(connectionString,function(err,client,done) {
      if(err){
@@ -48,6 +49,9 @@ app.get('/sp', function (req, res, next) {
      });
   });
 });
+=======
+
+>>>>>>> bf4b75ad79f88cf9a216770c581712ed818cce85
 
 
 
@@ -111,6 +115,7 @@ app.post('/', function (req, res) {
 
          
 
+<<<<<<< HEAD
           client.query( 'select * from Weather',
          
           function(err,result) {
@@ -123,11 +128,29 @@ app.post('/', function (req, res) {
                 
               var data=result.rows;
                 console.log(result.rows[2]);
+=======
+          // client.query( 'select * from Weather',
+         
+          // function(err,result) {
+          //     done(); // closing the connection;
+          //     if(err){
+          //         console.log(err);
+          //         res.status(400).send(err);
+          //     }
+              
+                
+          //     var data=result.rows;
+          //       console.log(result.rows[2]);
+>>>>>>> bf4b75ad79f88cf9a216770c581712ed818cce85
             
               
                  
            
+<<<<<<< HEAD
           });
+=======
+          // });
+>>>>>>> bf4b75ad79f88cf9a216770c581712ed818cce85
 
 
 
