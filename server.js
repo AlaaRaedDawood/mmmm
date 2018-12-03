@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 var pg = require("pg");
-var connectionString = "postgres://postgres:STmark66@localhost:5432/postgres";
+var connectionString = "postgres://root:123@db:5432/myapp";
 
 const apiKey = '013d2d7c9d47f4a5b3b3221c0d541b34';
 
@@ -16,9 +16,6 @@ app.get('/', function (req, res) {
 })
 
 
-
-
-<<<<<<< HEAD
 app.get('/sp', function (req, res, next) {
   pg.connect(connectionString,function(err,client,done) {
      if(err){
@@ -49,40 +46,6 @@ app.get('/sp', function (req, res, next) {
      });
   });
 });
-=======
-
->>>>>>> bf4b75ad79f88cf9a216770c581712ed818cce85
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -101,7 +64,7 @@ app.post('/', function (req, res) {
         let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
         pg.connect(connectionString,function(err,client,done) {
          
-          client.query( ' INSERT into Weather ( city, weather) VALUES($1, $2)',
+          client.query( ' INSERT into weather ( city, weather) VALUES($1, $2)',
           [weather.name, weather.main.temp] , 
           function(err,result) {
               done(); // closing the connection;
@@ -115,8 +78,7 @@ app.post('/', function (req, res) {
 
          
 
-<<<<<<< HEAD
-          client.query( 'select * from Weather',
+          client.query( 'select * from weather',
          
           function(err,result) {
               done(); // closing the connection;
@@ -128,29 +90,11 @@ app.post('/', function (req, res) {
                 
               var data=result.rows;
                 console.log(result.rows[2]);
-=======
-          // client.query( 'select * from Weather',
-         
-          // function(err,result) {
-          //     done(); // closing the connection;
-          //     if(err){
-          //         console.log(err);
-          //         res.status(400).send(err);
-          //     }
-              
-                
-          //     var data=result.rows;
-          //       console.log(result.rows[2]);
->>>>>>> bf4b75ad79f88cf9a216770c581712ed818cce85
             
               
                  
            
-<<<<<<< HEAD
           });
-=======
-          // });
->>>>>>> bf4b75ad79f88cf9a216770c581712ed818cce85
 
 
 
